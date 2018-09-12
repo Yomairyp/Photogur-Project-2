@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Username:</strong>
+  <%= @user.user_name %>
+</p>
+<p>
+  <%= @user.age %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+<h3>Profile pictures</h3>
+<% @user.pictures.each do |picture| %>
+  <p>
+    <%= picture.title %>
+    <br>
+    <%= image_tag picture.url %>
+    Added on: <%= picture.created_at %>
+  </p>
+<% end %>
+<h3>New Picture</h3>
+<%=render  'pictures/form'%>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

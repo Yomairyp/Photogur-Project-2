@@ -1,4 +1,2 @@
 module PicturesHelper
-  
-
 end
